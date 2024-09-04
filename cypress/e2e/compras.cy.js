@@ -1,4 +1,5 @@
 import adcionarProdutoPage from "../support/page_objects/adcionar-produto.page";
+let dadosLogin
 
 describe('Fluxo de Compras', () => {
     /*Como cliente da EBAC-SHOP
@@ -17,7 +18,8 @@ describe('Fluxo de Compras', () => {
     it('Deve adcionar os produtos ao carrinho', () => {
         cy.get('.icon-user-unfollow').click()
         cy.fixture('perfil').then((dados) => {
-            cy.log(dados.usuario, dados.senha)
+            cy.login(dados.usuario, dados.senha)
+            cy.get('.page-title').should('contain', 'Minha conta')
         })
         cy.visit('/produtos/')
         cy.fixture('produtos').then(dados => {
@@ -36,7 +38,9 @@ describe('Fluxo de Compras', () => {
             cy.get('.checkout-button').click()
             cy.get('#terms').click()
             cy.get('#place_order').click()
+            cy.wait(4000)
             cy.get('.woocommerce-column__title').should('contain', 'Endereço de faturamento')
         })
+       
     });
 });
