@@ -1,6 +1,22 @@
 {
+  "name": "tcc-ebac",
+  "version": "1.0.0",
+  "description": "Trabalho de Conclusao curso Engenheiro de Qualidade de Software",
+  "main": "index.js",
+  "scripts": {
+    "test ": "npx cypress run"
+  },
   "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.1.2",
     "cypress": "^13.14.1",
     "node": "^22.7.0"
-  }
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.0.0",
+    "@cypress/webpack-preprocessor": "^6.0.2",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "hamjest": "^4.1.0"
+  },
+  "author": "",
+  "license": "ISC"
 }
