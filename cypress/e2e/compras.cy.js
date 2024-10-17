@@ -15,7 +15,7 @@ describe('Fluxo de Compras', () => {
         cy.visit('/')
     });
 
-    it('Deve adcionar os produtos ao carrinho', () => {
+    it('Deve adcionar os produtos ao carrinho, Não ultrapassando o valor de R$ 990,00 e recebendo o cupom de 15% de desconto', () => {
         cy.get('.icon-user-unfollow').click()
         cy.fixture('perfil').then((dados) => {
             cy.login(dados.usuario, dados.senha)
@@ -43,4 +43,30 @@ describe('Fluxo de Compras', () => {
         })
        
     });
+    it.only('Deve adcionar os produtos ao carrinho, Valores entre R$ 200 e R$ 600 recebem o cupom de 10% de desconto', () => {
+        cy.get('.icon-user-unfollow').click()
+        cy.fixture('perfil').then((dados) => {
+            cy.login(dados.usuario, dados.senha)
+            cy.get('.page-title').should('contain', 'Minha conta')
+        })
+        cy.visit('/produtos/')
+        cy.fixture('produtos').then(dados => {
+            adcionarProdutoPage.buscarProdutoLista(dados[0].nomeProduto)
+            adcionarProdutoPage.addProdutoCarrinho(dados[0].tamanho, dados[0].cor, dados[0].quantidade)
+            cy.visit('/produtos/')
+            adcionarProdutoPage.buscarProdutoLista(dados[1].nomeProduto)
+            adcionarProdutoPage.addProdutoCarrinho(dados[1].tamanho, dados[1].cor, dados[1].quantidade)
+            cy.visit('/produtos/')
+            adcionarProdutoPage.buscarProdutoLista(dados[2].nomeProduto)
+            adcionarProdutoPage.addProdutoCarrinho(dados[2].tamanho, dados[2].cor, dados[2].quantidade)
+            cy.get('.woocommerce-message > .button').click()
+            cy.get('.checkout-button').click()
+            cy.get('#terms').click()
+            cy.get('#place_order').click()
+            cy.wait(4000)
+            cy.get('.woocommerce-column__title').should('contain', 'Endereço de faturamento')
+        })
+       
+    });
 });
+

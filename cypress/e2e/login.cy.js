@@ -38,7 +38,7 @@ it('Deve exibir uma mensagem de erro caso o usuário erre o login e senha', () =
     })
 });
 
-it.only('Se o usuário errar por 3 vezes a senha, deve travar por 15 minutos o login', () => {
+it('Se o usuário errar por 3 vezes a senha, deve travar por 15 minutos o login', () => {
     cy.fixture('perfil').then((dados) => {
         cy.login(dados.usuario, '123489723')
         cy.get('#password').type('wewedad')
