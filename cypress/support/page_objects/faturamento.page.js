@@ -1,5 +1,0 @@
-class dadosDaEntrega {
-    constructor(parameters) {
-        
-    }
-}

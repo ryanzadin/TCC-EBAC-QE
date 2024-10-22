@@ -1,10 +1,37 @@
+const webpack = require("@cypress/webpack-preprocessor");
+const { addCucumberPreprocessorPlugin } = require("@badeball/cypress-cucumber-preprocessor");
+
+
+async function setupNodeEvents(on, config) {
+  await addCucumberPreprocessorPlugin(on, config)
+
+  on('file:preprocessor', webpack ({
+    webpackOptions: {
+      resolve: {
+        extensions: ['.ts', '.js']
+      },
+      module:{
+        rules: [
+          {
+            test: /\.feature$/,
+            use:[
+              {
+                loader: '@badeball/cypress-cucumber-preprocessor/webpack',
+                options: config
+              },
+            ],
+          },
+        ],
+      },
+    }
+  }))
+  return config
+}
+
 module.exports = {
   e2e: {
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
-    setupNodeEvents(on, config) {
-      return require('./cypress/plugins/index.js')(on, config)
-    },
     baseUrl: 'http://lojaebac.ebaconline.art.br/',
+    specPattern: '**/*.feature',
+    setupNodeEvents
   },
-}
+};

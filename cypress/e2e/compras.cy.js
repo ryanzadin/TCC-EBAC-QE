@@ -43,7 +43,7 @@ describe('Fluxo de Compras', () => {
         })
        
     });
-    it.only('Deve adcionar os produtos ao carrinho, Valores entre R$ 200 e R$ 600 recebem o cupom de 10% de desconto', () => {
+    it('Deve adcionar os produtos ao carrinho, Valores entre R$ 200 e R$ 600 recebem o cupom de 10% de desconto', () => {
         cy.get('.icon-user-unfollow').click()
         cy.fixture('perfil').then((dados) => {
             cy.login(dados.usuario, dados.senha)
