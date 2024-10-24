@@ -1,14 +1,15 @@
-const webpack = require("@cypress/webpack-preprocessor");
+const { defineConfig } = require("cypress");
+const webpackPreprocessor = require('@cypress/webpack-preprocessor')
 const { addCucumberPreprocessorPlugin } = require("@badeball/cypress-cucumber-preprocessor");
 
 
 async function setupNodeEvents(on, config) {
   await addCucumberPreprocessorPlugin(on, config)
 
-  on('file:preprocessor', webpack ({
+  on('file:preprocessor', webpackPreprocessor ({
     webpackOptions: {
       resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.js', '.ts']
       },
       module:{
         rules: [
@@ -16,8 +17,8 @@ async function setupNodeEvents(on, config) {
             test: /\.feature$/,
             use:[
               {
-                loader: '@badeball/cypress-cucumber-preprocessor/webpack',
-                options: config
+                loader: "@badeball/cypress-cucumber-preprocessor/webpack",
+                options: config,
               },
             ],
           },
@@ -28,10 +29,10 @@ async function setupNodeEvents(on, config) {
   return config
 }
 
-module.exports = {
+module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://lojaebac.ebaconline.art.br/',
-    specPattern: '**/*.feature',
-    setupNodeEvents
+    specPattern: "**/*.feature",
+    setupNodeEvents,
   },
-};
+});

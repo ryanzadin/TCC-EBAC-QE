@@ -1,7 +1,7 @@
 Feature: Autentificação
     Scenario Outline: Login de usuario
-        Given que eu estou na pagina inicial
-        When eu faço login
+        Given eu visito a pagina
+        When  eu faco Login
         Then o nome de usuario deve aparecer na pagina de perfil
         Examples:
             | usuario              | senha           |
