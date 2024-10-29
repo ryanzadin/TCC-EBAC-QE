@@ -1,19 +1,17 @@
 /// <reference types="cypress" />
-import {Given, When, Then} from '@badeball/cypress-cucumber-preprocessor';
-let dadosLogin
+import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 
 Given('eu visito a pagina', () => {
-    cy.visit('/minha-conta/')
+    cy.visit('/')
 })
 
-When ('eu faço login', () =>{
+When('eu faco login', () => {
     cy.get('.icon-user-unfollow').click()
     cy.fixture('perfil').then((dados) => {
         cy.login(dados.usuario, dados.senha)
-        cy.get('.page-title').should('contain', 'Minha conta')
     })
 })
 
-Then ('o nome de usuario deve aparecer na pagina de login', () =>{
-
+Then('o nome de usuario deve aparecer na pagina de login', () => {
+    cy.get('.woocommerce-MyAccount-content > :nth-child(2) > :nth-child(1)').should('contain', 'aluno_ebac')
 })
