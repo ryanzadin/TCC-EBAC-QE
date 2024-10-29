@@ -1,5 +1,4 @@
-import adcionarProdutoPage from "../support/page_objects/adcionar-produto.page";
-let dadosLogin
+import adcionarProdutoPage from "../../support/page_objects/adcionar-produto.page";
 
 describe('Fluxo de Compras', () => {
     /*Como cliente da EBAC-SHOP
