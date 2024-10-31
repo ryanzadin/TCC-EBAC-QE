@@ -1,5 +1,5 @@
 import adcionarProdutoPage from "../support/page_objects/adcionar-produto.page";
-let dadosLogin
+import cupomPage from "../support/page_objects/cupom.page";
 
 describe('Fluxo de Compras', () => {
     /*Como cliente da EBAC-SHOP
@@ -35,6 +35,7 @@ describe('Fluxo de Compras', () => {
             adcionarProdutoPage.buscarProdutoLista(dados[3].nomeProduto)
             adcionarProdutoPage.addProdutoCarrinho(dados[3].tamanho, dados[3].cor, dados[3].quantidade)
             cy.get('.woocommerce-message > .button').click()
+            cupomPage.adcionarCupom("off10s")
             cy.get('.checkout-button').click()
             cy.get('#terms').click()
             cy.get('#place_order').click()
