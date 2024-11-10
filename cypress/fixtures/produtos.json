@@ -3,7 +3,7 @@
         "nomeProduto": "Aero Daily Fitness Tee",
         "tamanho":"XS",
         "cor":"Brown" ,
-        "quantidade": 2
+        "quantidade": 3
     },
     {
         "nomeProduto": "Apollo Running Short",
@@ -15,11 +15,17 @@
         "nomeProduto": "Argus All-Weather Tank",
         "tamanho": "M",
         "cor": "Gray",
-        "quantidade": 1
+        "quantidade": 3
     },
     {
         "nomeProduto": "Aether Gym Pant",
         "tamanho": "36",
+        "cor": "Blue",
+        "quantidade": 8
+    },
+    {
+        "nomeProduto": "Atlas Fitness Tank",
+        "tamanho": "XS",
         "cor": "Blue",
         "quantidade": 8
     }
