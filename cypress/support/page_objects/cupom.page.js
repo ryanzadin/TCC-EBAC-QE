@@ -1,11 +1,8 @@
 class cupomDesconto {
-    visitarUrl(){
-        cy.visit('carrinho')
-    }
+
     adcionarCupom(cupom){
-        cy.get('#coupon_code')
-        .contains(cupom)
-        .click()
+        cy.get('#coupon_code').type(cupom).click()
+        cy.get('.coupon > .btn').click()
     }
 
 }

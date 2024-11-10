@@ -28,3 +28,7 @@ Cypress.Commands.add('login', (usuario, senha) => {
     cy.get('#password').type(senha, {log: false})
     cy.get('.woocommerce-form > .button').click()
 });
+Cypress.Commands.add('cupom', (cupom) => {
+    cy.get('#coupon_code').type(cupom).click()
+    cy.get('.coupon > .btn').click()
+});

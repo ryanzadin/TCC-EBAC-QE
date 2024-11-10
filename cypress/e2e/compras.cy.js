@@ -15,7 +15,7 @@ describe('Fluxo de Compras', () => {
         cy.visit('/')
     });
 
-    it('Deve adcionar os produtos ao carrinho, Não ultrapassando o valor de R$ 990,00 e recebendo o cupom de 15% de desconto', () => {
+    it('Deve adcionar os produtos ao carrinho, Não ultrapassando o valor de R$ 990,00 e chegar no minimo em R$ 600,00, assim recebendo o cupom de 15% de desconto', () => {
         cy.get('.icon-user-unfollow').click()
         cy.fixture('perfil').then((dados) => {
             cy.login(dados.usuario, dados.senha)
@@ -35,7 +35,7 @@ describe('Fluxo de Compras', () => {
             adcionarProdutoPage.buscarProdutoLista(dados[3].nomeProduto)
             adcionarProdutoPage.addProdutoCarrinho(dados[3].tamanho, dados[3].cor, dados[3].quantidade)
             cy.get('.woocommerce-message > .button').click()
-            cupomPage.adcionarCupom("off10s")
+            cy.fixture('cupom').then(( dados => { cupomPage.adcionarCupom(dados[1].cupom)}))
             cy.get('.checkout-button').click()
             cy.get('#terms').click()
             cy.get('#place_order').click()
@@ -44,7 +44,7 @@ describe('Fluxo de Compras', () => {
         })
        
     });
-    it.only('Deve adcionar os produtos ao carrinho, Valores entre R$ 200 e R$ 600 recebem o cupom de 10% de desconto', () => {
+    it('Deve adcionar os produtos ao carrinho, Valores entre R$ 200 e R$ 600 recebem o cupom de 10% de desconto', () => {
         cy.get('.icon-user-unfollow').click()
         cy.fixture('perfil').then((dados) => {
             cy.login(dados.usuario, dados.senha)
@@ -61,6 +61,7 @@ describe('Fluxo de Compras', () => {
             adcionarProdutoPage.buscarProdutoLista(dados[2].nomeProduto)
             adcionarProdutoPage.addProdutoCarrinho(dados[2].tamanho, dados[2].cor, dados[2].quantidade)
             cy.get('.woocommerce-message > .button').click()
+            cy.fixture('cupom').then(( dados => { cupomPage.adcionarCupom(dados[0].cupom)}))
             cy.get('.checkout-button').click()
             cy.get('#terms').click()
             cy.get('#place_order').click()
@@ -70,4 +71,7 @@ describe('Fluxo de Compras', () => {
        
     });
 });
+
+
+
 
