@@ -3,5 +3,9 @@
     "cypress": "^13.14.1",
     "joi": "^17.13.3",
     "node": "^22.7.0"
+  },
+  "devDependencies": {
+    "mocha": "^11.0.1",
+    "pactum": "^3.7.6"
   }
 }

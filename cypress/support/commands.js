@@ -32,3 +32,13 @@ Cypress.Commands.add('cupom', (cupom) => {
     cy.get('#coupon_code').type(cupom).click()
     cy.get('.coupon > .btn').click()
 });
+Cypress.Commands.add('token', (email, password) => {
+    cy.request({
+        method: 'POST',
+        url: 'public/authUser',
+        "email": email,
+        "password": password
+    })
+});
+
+

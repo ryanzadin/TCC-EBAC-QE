@@ -5,6 +5,6 @@ module.exports = {
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },
-    baseUrl: 'http://lojaebac.ebaconline.art.br/',
+    baseUrl: 'http://lojaebac.ebaconline.art.br/api-docs/',
   },
 }
