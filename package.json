@@ -5,7 +5,9 @@
     "node": "^22.7.0"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "mocha": "^11.0.1",
-    "pactum": "^3.7.6"
+    "pactum": "^3.7.6",
+    "supertest": "^7.0.0"
   }
 }

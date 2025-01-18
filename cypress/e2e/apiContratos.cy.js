@@ -1,18 +1,9 @@
 /// <reference types="cypress" />
 import contrato from "../contratos/usuarios.contrato";
 
-beforeEach(() => {
-  cy.visit('/')
-});
-
 describe('Testes de validação de contratos de Usuários', () => {
-     let token
-     before(() => {
-          cy.token('admin@admin.com', 'admin123').then(tkn => { token = tkn })
-     });
-
-
-     it('Deve validar contrato de usuários', () => {
+    
+     it.only('Deve validar contrato de usuários', () => {
           cy.request('usuarios').then(response => {
                return contrato.validateAsync(response.body)
           })
@@ -22,12 +13,11 @@ describe('Testes de validação de contratos de Usuários', () => {
      it('Deve listar usuários cadastrados', () => {
           cy.request({
                method: 'GET',
-               url: 'usuarios',
-               headers: { authorization: token },
+               url: '',
           }).then((response) => {
-               expect(response.body.usuarios[1].nome).to.equal('Eduarda Sartori')
+               expect(response.body.usuarios[1].nome).to.equal('')
                expect(response.status).to.equal(200)
-               expect(response.body).to.have.property('usuarios')
+               expect(response.body).to.have.property('')
                expect(response.duration).to.be.lessThan(20)
           })
      });

@@ -9,7 +9,6 @@ describe('Autenticar usuario', () => {
             "password": "admin123"
         }).then((response) => {
             expect(response.status).to.equal(200)
-            cy.log(response.body.authorization)
         })
     });
 });
