@@ -1,1 +1,19 @@
-{"name":"tcc-ebac-qe","version":"1.0.0","description":"testes em ui","main":"index.js","scripts":{"test":"npm run cy:run","cy:run":"npx cypress run","cy:report":"npx mochawesome-merge --reportDir cypress/reports/mocha > cypress/reports/mocha/report.json"},"devDependencies":{"cypress":"^13.14.1","cypress-mochawesome-reporter":"^3.8.2","joi":"^17.13.3","node":"^22.7.0"},"author":"ryan","license":"ISC"}
+{
+  "name": "tcc-ebac-qe",
+  "version": "1.0.0",
+  "description": "testes em ui",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run cy:run",
+    "cy:run": "npx cypress run",
+    "cy:report": "npx mochawesome-merge --reportDir cypress/reports/mocha > cypress/reports/mocha/report.json"
+  },
+  "devDependencies": {
+    "cypress": "^13.14.1",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "joi": "^17.13.3",
+    "node": "^22.7.0"
+  },
+  "author": "ryan",
+  "license": "ISC"
+}
