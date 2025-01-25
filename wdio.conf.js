@@ -14,7 +14,7 @@ export const config = {
       ]
     ],
     specs: [
-        './test/specs/**/*.js'
+        '../test/specs/**/*.js'
     ],
     exclude: [
    

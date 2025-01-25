@@ -9,7 +9,7 @@
     "appium-uiautomator2-driver": "^3.10.0"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "test": "wdio run ./wdio.conf.js"
   },
   "dependencies": {
     "dotenv": "^16.4.7"
