@@ -2,12 +2,21 @@
   "dependencies": {
     "cypress": "^13.14.1",
     "joi": "^17.13.3",
-    "node": "^22.7.0"
+    "node": "^22.7.0",
+    "pactum-flow-plugin": "^0.1.4",
+    "pactum-matchers": "^1.1.7"
   },
   "devDependencies": {
     "jest": "^29.7.0",
     "mocha": "^11.0.1",
     "pactum": "^3.7.6",
     "supertest": "^7.0.0"
+  },
+  "scripts": {
+    "test": "mocha ./test/**/*.test.js",
+    "test:contractConsumer": "mocha ./test/contract/loginConsumer.test.js",
+    "test:contractProvider": "mocha ./test/contract/loginProvider.test.js",
+    "test:contractProductP": "mocha ./test/contract/productProvider.test.js",
+    "test:contractProductC": "mocha ./test/contract/productConsumer.test.js"
   }
 }
