@@ -13,5 +13,14 @@
   },
   "dependencies": {
     "dotenv": "^16.4.7"
-  }
+  },
+  "name": "trabalho-de-conclusao---ebac",
+  "version": "1.0.0",
+  "description": "Testes automatizados em UI",
+  "main": "wdio.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
 }
