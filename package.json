@@ -1,5 +1,4 @@
 {
-  "name": "Trabalho de Conclusao - EBAC",
   "type": "module",
   "devDependencies": {
     "@wdio/browserstack-service": "^9.7.1",
