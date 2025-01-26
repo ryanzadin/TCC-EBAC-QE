@@ -13,5 +13,14 @@
   },
   "dependencies": {
     "dotenv": "^16.4.7"
-  }
+  },
+  "name": "tcc-ebac-qe",
+  "version": "1.0.0",
+  "description": "Trabalho de Conclusao curso Engenheiro de Qualidade de Software",
+  "main": "wdio.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
 }
