@@ -17,7 +17,7 @@ function addFlowReporter() {
     pf.config.url = 'http://localhost:8088';
     pf.config.projectId = 'lojaebac-wishlist-front';
     pf.config.projectName = 'teste de wishlist front';
-    pf.config.version = '1.0.7';
+    pf.config.version = '1.0.1';
     pf.config.username = 'scanner';
     pf.config.password = 'scanner';
     reporter.add(pf.reporter);
@@ -43,8 +43,8 @@ handler.addInteractionHandler('Product response', () => {
             method: 'POST',
             path: '/api/wishlistProduct',
             body: {
-                "authorization": like("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY2M2Q3ZDI0NzI5NGVmYWQwNWFmZDFkOSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcxNzcwNDk4MSwiZXhwIjoxNzE3NzkxMzgxfQ.-ApslR0hKSM_S4hs8Eh9fe0_tZyYGKBwvcIef9Vl0lc"),
-                "productId": like ("663d81f57294efad05afd24a")
+                "authorization": like("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY3N2NkODhjNTJmOWIxY2ZmY2ZjYTA1NiIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTczNzkwNzY0NSwiZXhwIjoxNzM3OTk0MDQ1fQ.pOWEkBXbjCYmxjsEDoo3ZYa0CofZOTgwex_6k_s38Ss"),
+                "productId": like ("679403caf679c1b50c47a710")
             }
         },
         response: {
