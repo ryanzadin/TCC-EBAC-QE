@@ -8,6 +8,7 @@
     "cy:run": "npx cypress run",
     "cy:report": "npx mochawesome-merge --reportDir cypress/reports/mocha > cypress/reports/mocha/report.json"
   },
+  
   "devDependencies": {
     "cypress": "^13.14.1",
     "cypress-mochawesome-reporter": "^3.8.2",
