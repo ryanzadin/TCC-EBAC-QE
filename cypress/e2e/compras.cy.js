@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 import adcionarProdutoPage from "../support/page_objects/adcionar-produto.page";
 import cupomPage from "../support/page_objects/cupom.page";
 

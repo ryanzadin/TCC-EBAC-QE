@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 describe('Fluxo de login', () => {
     /* Como cliente da EBAC-SHOP
        Quero fazer o login (autenticação) na plataforma
